@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <input
+        #myuser
+        type="text"
+        class="form-control"
+        [placeholder]="UserName"
+      />
+      <button (click)="onclick(myuser)" class="btn btn-danger mt-3">
+        Add Friend
+      </button>
+
+      <table class="table table-bordered mt-3">
+        <thead class="thead-light">
+          <tr>
+            <th>Sr.No</th>
+            <th>Friend Name</th>
+            <th>Delete friend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of userlist; index as userno">
+            <td>{{ userno + 1 }}</td>
+            <td>{{ i }}</td>
+            <td>
+              <button (click)="ondelete(userno)" class="btn btn-success">
+                Remove Friend
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
